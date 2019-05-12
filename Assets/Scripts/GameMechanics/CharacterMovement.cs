@@ -73,13 +73,13 @@ public class CharacterMovement : MonoBehaviour
         float mag = inputVec.magnitude;
 
         float goalSpeed = 0;
-        if (mag > JOYSTICK_WALK_THRESHOLD)
-        {
-            goalSpeed = walkSpeed;
-        }
-        else if (mag > JOYSTICK_RUN_THRESHOLD)
+        if (mag > JOYSTICK_RUN_THRESHOLD)
         {
             goalSpeed = runSpeed;
+        }
+        else if (mag > JOYSTICK_WALK_THRESHOLD)
+        {
+            goalSpeed = walkSpeed;
         }
         //Vector2 updatedVectorSpeed = Vector2.MoveTowards(new Vector2(rigid.velocity.x, rigid.velocity.z), , Time.deltaTime * movementAcceleration);
         Vector2 updatedVectorSpeed = inputVec.normalized * goalSpeed;
