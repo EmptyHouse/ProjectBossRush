@@ -10,9 +10,14 @@ public class CharacterStats : MonoBehaviour {
     public float maxHealth = 10;
     [Tooltip("The current health of this character")]
     private float currentHealth;
-    [Tooltip("The associated animator")]
-    public Animator anim;
-    public CharacterMovement characterMovement;
+    /// <summary>
+    /// Associated animator with our character.
+    /// </summary>
+    public Animator anim { get; private set; }
+    /// <summary>
+    /// Associated character movement script. If there is none this value will be null
+    /// </summary>
+    public CharacterMovement characterMovement { get; private set; }
     #region monobehaviour methods
     private void Awake()
     {
@@ -25,6 +30,24 @@ public class CharacterStats : MonoBehaviour {
     #endregion monobehaviour methods
 
     #region health methods
+    /// <summary>
+    /// Method that should be called whenever we heal our character
+    /// </summary>
+    /// <param name="healthToAdd"></param>
+    public virtual void HealCharacter(float healthToAdd)
+    {
+        currentHealth += healthToAdd;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+    }
+
+    /// <summary>
+    /// Whenever this character takes damage, this method should be called
+    /// </summary>
+    /// <param name="damageToTake"></param>
+    /// <returns></returns>
     public virtual float TakeDamage(float damageToTake)
     {
         currentHealth -= damageToTake;
