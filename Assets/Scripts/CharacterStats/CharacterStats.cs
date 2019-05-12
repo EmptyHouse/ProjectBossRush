@@ -12,12 +12,13 @@ public class CharacterStats : MonoBehaviour {
     private float currentHealth;
     [Tooltip("The associated animator")]
     public Animator anim;
-
+    public CharacterMovement characterMovement;
     #region monobehaviour methods
     private void Awake()
     {
         currentHealth = maxHealth;
         anim = GetComponent<Animator>();
+        characterMovement = GetComponent<CharacterMovement>();
     }
 
 

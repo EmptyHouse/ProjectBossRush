@@ -17,17 +17,30 @@ public class CharacterMovement : MonoBehaviour
     /// This is the acceleration our character will take to reach the goal speed
     /// </summary>
     public float movementAcceleration = 15;
-
+    private SpriteRenderer associatedSpriteRender;
+    [Tooltip("")]
+    private Rigidbody rigid;
     private float horizontalInput = 0;
     private float verticalInput = 0;
     #endregion main variables
     #region monoabehaviour methods
     private void Awake()
     {
+        associatedSpriteRender = GetComponentInChildren<SpriteRenderer>();
+        rigid = GetComponent<Rigidbody>();
+    }
+
+    protected virtual void Update()
+    {
+        UpdateMovementBasedOnInput();
+    }
+
+    protected virtual void LateUpdate()
+    {
         
     }
 
-    private void OnValidate()
+    protected virtual void OnValidate()
     {
         if (walkSpeed < 0)
         {
@@ -49,5 +62,26 @@ public class CharacterMovement : MonoBehaviour
     {
         horizontalInput = x;
         verticalInput = y;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    protected virtual void UpdateMovementBasedOnInput()
+    {
+        Vector2 inputVec = new Vector2(horizontalInput, verticalInput);
+        float mag = inputVec.magnitude;
+
+        float goalSpeed = 0;
+        if (mag > JOYSTICK_WALK_THRESHOLD)
+        {
+            goalSpeed = walkSpeed;
+        }
+        else if (mag > JOYSTICK_RUN_THRESHOLD)
+        {
+            goalSpeed = runSpeed;
+        }
+        Vector2 updatedVectorSpeed = Vector2.MoveTowards(new Vector2(rigid.velocity.x, rigid.velocity.z), inputVec * mag, Time.deltaTime * movementAcceleration);
+        rigid.velocity = new Vector3(updatedVectorSpeed.x, 0, updatedVectorSpeed.y);
     }
 }

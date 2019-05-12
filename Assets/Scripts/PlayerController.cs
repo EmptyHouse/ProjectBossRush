@@ -15,11 +15,16 @@ public class PlayerController : MonoBehaviour {
     public const string PROJECTILE_INPUT = "FireProjectile";
     public const string JUMP_INPUT = "Jump";
     #endregion const inputs
-
+    private PlayerCharacterStats characterStats;
     #region monobehaviour methods
+    private void Awake()
+    {
+        characterStats = GetComponent<PlayerCharacterStats>();
+    }
+
     private void Update()
     {
-        
+        characterStats.characterMovement.SetMovementInput(Input.GetAxisRaw(HORIZONTAL_AXIS), Input.GetAxisRaw(VERTICAL_AXIS));
     }
     #endregion monobehaviour methodss
 
