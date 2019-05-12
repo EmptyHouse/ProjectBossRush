@@ -22,6 +22,7 @@ public class CharacterStats : MonoBehaviour {
     /// Associated animator with our character.
     /// </summary>
     public Animator anim { get; private set; }
+    public CustomPhysics2D rigid { get; private set; }
     /// <summary>
     /// Associated character movement script. If there is none this value will be null
     /// </summary>
@@ -37,6 +38,12 @@ public class CharacterStats : MonoBehaviour {
         {
             characterMovement.associatedCharacterStats = this;
         }
+        rigid = GetComponent<CustomPhysics2D>();
+        if (rigid != null)
+        {
+            rigid.associatedCharacterStats = this;
+        }
+
     }
 
 
