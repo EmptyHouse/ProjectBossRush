@@ -22,6 +22,11 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody rigid;
     private float horizontalInput = 0;
     private float verticalInput = 0;
+    /// <summary>
+    /// 
+    /// </summary>
+    public CharacterStats associatedCharacterStats { get; set; }
+
     #endregion main variables
     #region monoabehaviour methods
     private void Awake()
@@ -53,6 +58,7 @@ public class CharacterMovement : MonoBehaviour
         }
     }
     #endregion monobeahviour methods
+
     /// <summary>
     /// 
     /// </summary>
@@ -85,4 +91,24 @@ public class CharacterMovement : MonoBehaviour
         Vector2 updatedVectorSpeed = inputVec.normalized * goalSpeed;
         rigid.velocity = new Vector3(updatedVectorSpeed.x, 0, updatedVectorSpeed.y);
     }
+
+    #region sprite methods
+    /// <summary>
+    /// 
+    /// </summary>
+    public void SetSpriteInDirectionBasedOnInput()
+    {
+        
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public void SetSpriteAnimator()
+    {
+
+    }
+
+
+    #endregion sprite methods
 }

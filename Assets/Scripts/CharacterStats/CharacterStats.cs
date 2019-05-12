@@ -6,6 +6,14 @@ using UnityEngine;
 /// A script that hold references to important behviaours and stats that an object may need to know to interact with a character
 /// </summary>
 public class CharacterStats : MonoBehaviour {
+    public enum SpriteLayer : int
+    {
+        Environment = 0x01,
+        Player = 0x03,
+
+    }
+
+
     [Tooltip("The maximum health of this character")]
     public float maxHealth = 10;
     [Tooltip("The current health of this character")]
@@ -23,7 +31,12 @@ public class CharacterStats : MonoBehaviour {
     {
         currentHealth = maxHealth;
         anim = GetComponent<Animator>();
+
         characterMovement = GetComponent<CharacterMovement>();
+        if (characterMovement != null)
+        {
+            characterMovement.associatedCharacterStats = this;
+        }
     }
 
 

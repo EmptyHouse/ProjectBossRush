@@ -39,6 +39,10 @@ public class GameOverseer : MonoBehaviour {
 
 
     public List<GameObject> listOfObjectsInDontDestroyOnLoad { get; private set; }
+    /// <summary>
+    /// The main game camera in our scene
+    /// </summary>
+    public Camera mainGameCamera { get; set; }
     #endregion main variables
 
     #region monobehaviour methods
