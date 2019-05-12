@@ -297,5 +297,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3846931462882222913, guid: d40d25aa17764a9429caa943bb50a538,
+        type: 3}
+      propertyPath: runSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846931462882222913, guid: d40d25aa17764a9429caa943bb50a538,
+        type: 3}
+      propertyPath: walkSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846931462882222913, guid: d40d25aa17764a9429caa943bb50a538,
+        type: 3}
+      propertyPath: movementAcceleration
+      value: 10000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d40d25aa17764a9429caa943bb50a538, type: 3}

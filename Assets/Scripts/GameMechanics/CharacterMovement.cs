@@ -81,7 +81,8 @@ public class CharacterMovement : MonoBehaviour
         {
             goalSpeed = runSpeed;
         }
-        Vector2 updatedVectorSpeed = Vector2.MoveTowards(new Vector2(rigid.velocity.x, rigid.velocity.z), inputVec * mag, Time.deltaTime * movementAcceleration);
+        //Vector2 updatedVectorSpeed = Vector2.MoveTowards(new Vector2(rigid.velocity.x, rigid.velocity.z), , Time.deltaTime * movementAcceleration);
+        Vector2 updatedVectorSpeed = inputVec.normalized * goalSpeed;
         rigid.velocity = new Vector3(updatedVectorSpeed.x, 0, updatedVectorSpeed.y);
     }
 }
