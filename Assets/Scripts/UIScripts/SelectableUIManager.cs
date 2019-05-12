@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,11 @@ public class SelectableUIManager : MonoBehaviour {
     /// as an input in our settings manager
     /// </summary>
     protected const float JOYSTICK_THRESHOLD = .65f;
+
+    public const string HORIZONTAL_AXIS = "Horizontal";
+    public const string VERTICAL_AXIS = "Vertical";
+    public const string ACCEPT_BUTTON = "Submit";
+    public const string CANCEL_BUTTON = "Cancel";
     #endregion const variables
     #region main variables
     [Tooltip("This is the time before we begin autoscrolling in our menu. We will always move to a new item immediately, but we may want a delay before scrolling to different optins automatically")]
@@ -45,9 +51,9 @@ public class SelectableUIManager : MonoBehaviour {
         {
             return;
         }
-        float verticalInput = Input.GetAxisRaw("Vertical");
+        float verticalInput = GetVertical();
         float horizontalInput = Input.GetAxisRaw("Horizontal");
-        if (Mathf.Abs(verticalInput) > JOYSTICK_THRESHOLD)
+        if (JoystickAboveThreshold(verticalInput))
         {
             StartCoroutine(BeginAutoScrollingVertical(verticalInput));
         }
@@ -57,8 +63,12 @@ public class SelectableUIManager : MonoBehaviour {
         }
     }
     #endregion monobehaviour methods
-
-
+    /// <summary>
+    /// Gets the next available option in our selectable UI Manager.
+    /// If there is no available option, this method will return null.
+    /// </summary>
+    /// <param name="directionToCheck"></param>
+    /// <returns></returns>
     private SelectableUI GetNextOption(SelectableUI.UIDirection directionToCheck)
     {
         SelectableUI optionToCheck = currentlySelectedUI.GetUIInDirection(directionToCheck);
@@ -69,6 +79,11 @@ public class SelectableUIManager : MonoBehaviour {
         //}
     }
 
+    /// <summary>
+    /// Sets the next selecctable UI Option. This will disable the currently selected
+    /// item and 
+    /// </summary>
+    /// <param name="selectableUI"></param>
     private void SetNextSelectableUIOption(SelectableUI selectableUI)
     {
         if (selectableUI == null) return;
@@ -92,17 +107,15 @@ public class SelectableUIManager : MonoBehaviour {
 
         float timeThatHasPassed = 0;
 
-        ///TO-DO Add code that will change to the next item in the ui menu
         SelectableUI nextOption = GetNextOption(direction < 0 ? SelectableUI.UIDirection.South : SelectableUI.UIDirection.North);
         if (nextOption != null)
         {
             SetNextSelectableUIOption(nextOption);
         }
+
         while (timeThatHasPassed < timeBeforeAutoScrolling)
         {
-            
-
-            if (direction * Input.GetAxisRaw("Vertical") < JOYSTICK_THRESHOLD)
+            if (!JoystickAboveThresholdSign(direction, GetVertical()))
             {
                 this.isCurrentlyAutoScrolling = false;
                 yield break;
@@ -112,7 +125,7 @@ public class SelectableUIManager : MonoBehaviour {
         }
 
         timeThatHasPassed = 0;
-        while (direction * Input.GetAxisRaw("Vertical") > JOYSTICK_THRESHOLD)
+        while (JoystickAboveThresholdSign(direction, GetVertical()))
         {
             if (timeThatHasPassed > timeToScrollToNextOption)
             {
@@ -124,11 +137,96 @@ public class SelectableUIManager : MonoBehaviour {
                     SetNextSelectableUIOption(nextOption);
                 }
             }
-
             timeThatHasPassed += Time.unscaledDeltaTime;
             yield return null;
         }
         this.isCurrentlyAutoScrolling = false;
         yield break;
+    }
+
+    #region common inputs
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public bool GetAcceptButtonDown()
+    {
+        return Input.GetButtonDown(ACCEPT_BUTTON);
+    }
+
+
+    public bool GetAcceptButton()
+    {
+        return Input.GetButton(ACCEPT_BUTTON);
+    }
+
+
+    public bool GetAcceptButtonUp()
+    {
+        return Input.GetButtonUp(ACCEPT_BUTTON);
+    }
+
+
+    public bool GetCancelButtonDown()
+    {
+        return Input.GetButtonDown(CANCEL_BUTTON);
+    }
+
+
+    public bool GetCancelButton()
+    {
+        return Input.GetButton(CANCEL_BUTTON);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public bool GetCancelButtonUp()
+    {
+        return Input.GetButtonUp(CANCEL_BUTTON);
+    }
+
+    public float GetHorizontal()
+    {
+        return Input.GetAxisRaw(HORIZONTAL_AXIS);
+    }
+
+    public float GetVertical()
+    {
+        return Input.GetAxisRaw(VERTICAL_AXIS);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="axis"></param>
+    /// <returns></returns>
+    public bool JoystickAboveThreshold(float axis)
+    {
+        return Mathf.Abs(axis) > JOYSTICK_THRESHOLD;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sign"></param>
+    /// <param name="axis"></param>
+    /// <returns></returns>
+    public bool JoystickAboveThresholdSign(float sign, float axis)
+    {
+        return (sign * axis) > JOYSTICK_THRESHOLD;
+    }
+    #endregion common inputs
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="methodToPerformAfterOneFrame"></param>
+    /// <returns></returns>
+    protected IEnumerator PerformActionAfterOneFrame(Action methodToPerformAfterOneFrame)
+    {
+        yield return null;
+        methodToPerformAfterOneFrame.Invoke();
     }
 }
