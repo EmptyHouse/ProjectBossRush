@@ -6,11 +6,12 @@ using UnityEngine;
 /// <summary>
 /// Attach this to the main camera of our game to follow the current player. This can also be used to follow other assigned targets if necessary
 /// </summary>
-public class CameraFollow : MonoBehaviour {
+public class CameraFollow : MonoBehaviour
+{
     public Transform mainTarget;
-    private Rigidbody targetRigidbodyPhysics;
+    private CustomPhysics2D targetRigidbodyPhysics;
 
-    public Vector3 offsetFromVelocity;
+    public Vector2 offsetFromVelocity;
 
 
     private Vector3 cameraOffset;
@@ -24,12 +25,13 @@ public class CameraFollow : MonoBehaviour {
     private void Start()
     {
         mainTarget = this.transform.parent;
-        targetRigidbodyPhysics = mainTarget.GetComponent<Rigidbody>();
+        targetRigidbodyPhysics = mainTarget.GetComponent<CustomPhysics2D>();
         cameraOffset = this.transform.position - mainTarget.position;
         this.transform.SetParent(null);
         associatedCamera = GetComponentInChildren<Camera>();
 
         //GameOverseer.Instance.AddObjectToDontDestroyOnLoad(this.gameObject);
+
     }
 
     private void LateUpdate()
@@ -45,7 +47,7 @@ public class CameraFollow : MonoBehaviour {
     {
         if (mainTarget)
         {
-            Vector3 adjustedVelocityOffset = new Vector3(targetRigidbodyPhysics.velocity.x * offsetFromVelocity.x, targetRigidbodyPhysics.velocity.y * offsetFromVelocity.y, targetRigidbodyPhysics.velocity.z * offsetFromVelocity.z);
+            Vector3 adjustedVelocityOffset = new Vector2(targetRigidbodyPhysics.velocity.x * offsetFromVelocity.x, targetRigidbodyPhysics.velocity.y * offsetFromVelocity.y);
             Vector3 goalPosition = mainTarget.position + cameraOffset + adjustedVelocityOffset;
 
             Vector3 delta = goalPosition - transform.position;
