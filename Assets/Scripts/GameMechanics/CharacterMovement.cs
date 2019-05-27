@@ -7,8 +7,13 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     #region main variables
-    
-    public CharacterStats associatedCharacterStats;
+    public float walkingSpeed = 5;
+    public float runningSpeed = 10;
+
+    /// <summary>
+    /// This Character's associated stats
+    /// </summary>
+    public CharacterStats associatedCharacterStats { get; private set; }
     private Vector2 characterMovementInput;
     #endregion main variables
 
