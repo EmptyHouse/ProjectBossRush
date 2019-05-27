@@ -8,7 +8,7 @@ using UnityEngine.UI;
 /// they press the submit button
 /// </summary>
 public class SplashScreenCursor : MonoBehaviour {
-    public float lerpSpeed;
+    public float lerpSpeed = 10;
     public SelectableUIManager menuManager;
     public Image cursorRight;
     public Image cursorLeft;
