@@ -24,9 +24,8 @@ public class PlayerController : MonoBehaviour {
 
     private void Update()
     {
-        characterStats.characterMovement.SetMovementInput(Input.GetAxisRaw(HORIZONTAL_AXIS));
+        characterStats.characterMovement.SetMovementInput(Input.GetAxisRaw(HORIZONTAL_AXIS), Input.GetAxisRaw(VERTICAL_AXIS));
     }
     #endregion monobehaviour methodss
-
 
 }

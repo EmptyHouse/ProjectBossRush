@@ -22,28 +22,17 @@ public class CharacterStats : MonoBehaviour {
     /// Associated animator with our character.
     /// </summary>
     public Animator anim { get; private set; }
-    public CustomPhysics2D rigid { get; private set; }
+    public Rigidbody rigid { get; private set; }
     /// <summary>
     /// Associated character movement script. If there is none this value will be null
     /// </summary>
-    public CharacterMovement characterMovement { get; private set; }
+    public CharacterMovement characterMovement { get; set; }
     #region monobehaviour methods
     private void Awake()
     {
         currentHealth = maxHealth;
         anim = GetComponent<Animator>();
-
-        characterMovement = GetComponent<CharacterMovement>();
-        if (characterMovement != null)
-        {
-            characterMovement.associatedCharacterStats = this;
-        }
-        rigid = GetComponent<CustomPhysics2D>();
-        if (rigid != null)
-        {
-            rigid.associatedCharacterStats = this;
-        }
-
+        rigid = GetComponent<Rigidbody>();
     }
 
 

@@ -15,7 +15,7 @@ public class SelectableSlider : SelectableUI {
     [Tooltip("The value that will ")]
     public float incrementValue = .01f;
 
-    private float currentlyDisplayedValue = 0;
+
     #endregion main variables
     #region monobehaviour methods
     private void Update()
