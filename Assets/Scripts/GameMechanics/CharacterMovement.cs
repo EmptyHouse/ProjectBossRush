@@ -6,6 +6,12 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterStats))]
 public class CharacterMovement : MonoBehaviour
 {
+    #region const variables
+    protected const float WALK_THRESHOLD = .2f;
+    protected const float RUN_THRESHOLD = .65f;
+    #endregion const variables
+
+
     #region main variables
     public float walkingSpeed = 5;
     public float runningSpeed = 10;
@@ -27,13 +33,24 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        
+        UpdateVelocityForMovementFromInput();
     }
     #endregion monobehaviour methods
 
     public void UpdateVelocityForMovementFromInput()
     {
-
+        float goalSpeed = 0;
+        
+        if (characterMovementInput.magnitude > RUN_THRESHOLD)
+        {
+            goalSpeed = runningSpeed;
+        }
+        else if (characterMovementInput.magnitude > WALK_THRESHOLD)
+        {
+            goalSpeed = walkingSpeed;
+        }
+        Vector2 normalizedGoalSpeed = characterMovementInput.normalized * goalSpeed;
+        associatedCharacterStats.rigid.velocity = new Vector3(normalizedGoalSpeed.x, 0, normalizedGoalSpeed.y);
     }
 
     /// <summary>
