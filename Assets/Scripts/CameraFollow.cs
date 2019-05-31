@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class CameraFollow : MonoBehaviour
 {
-    public Transform mainTarget;
+    public Transform mainTarget { get; private set; }
     private CustomPhysics2D targetRigidbodyPhysics;
 
     public Vector3 offsetFromVelocity;
@@ -29,7 +29,7 @@ public class CameraFollow : MonoBehaviour
         cameraOffset = this.transform.position - mainTarget.position;
         this.transform.SetParent(null);
         associatedCamera = GetComponentInChildren<Camera>();
-
+        GameOverseer.Instance.mainGameCamera = associatedCamera;
         //GameOverseer.Instance.AddObjectToDontDestroyOnLoad(this.gameObject);
 
     }

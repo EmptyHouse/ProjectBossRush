@@ -4,7 +4,8 @@ using UnityEngine;
 
 
 /// <summary>
-/// Overseer object. Manages important references in the game
+/// The Game Overseer is used to manage and store important references from the game. This is also where you can save/load the current
+/// game's progress
 /// </summary>
 public class GameOverseer : MonoBehaviour {
     #region enums
@@ -34,7 +35,7 @@ public class GameOverseer : MonoBehaviour {
 
     #region main variables
     public Utilities.SceneField sceneToLoadOnQuitGame;
-    public PlayerCharacterStats playerCharacterStats;
+    public PlayerCharacterStats playerCharacterStats { get; set; }
     public GameState currentGameState { get; private set; }
 
 
@@ -86,7 +87,7 @@ public class GameOverseer : MonoBehaviour {
     }
 
     /// <summary>
-    /// 
+    /// When we return to the main menu we should just go ahead and destroy every game object including this overseer.
     /// </summary>
     public void DestroyAllGameObjectsInDontDestroyOnLoad()
     {
@@ -98,9 +99,16 @@ public class GameOverseer : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Safely quits the game and returns to the main menu
+    /// </summary>
     public void QuitGameAndReturnToMainMenu()
     {
         DestroyAllGameObjectsInDontDestroyOnLoad();
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoadOnQuitGame);
     }
+
+    #region loading/saving game
+
+    #endregion loading/saving game
 }
