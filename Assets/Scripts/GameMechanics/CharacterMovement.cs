@@ -50,7 +50,7 @@ public class CharacterMovement : MonoBehaviour
             goalSpeed = walkingSpeed;
         }
         Vector2 normalizedGoalSpeed = characterMovementInput.normalized * goalSpeed;
-        associatedCharacterStats.rigid.velocity = new Vector3(normalizedGoalSpeed.x, 0, normalizedGoalSpeed.y);
+        associatedCharacterStats.rigid.velocity = new Vector3(normalizedGoalSpeed.x, associatedCharacterStats.rigid.velocity.y, normalizedGoalSpeed.y);
     }
 
     /// <summary>
