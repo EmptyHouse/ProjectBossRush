@@ -523,6 +523,61 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2091493669802272358, guid: d40d25aa17764a9429caa943bb50a538,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.13000128
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091493669802272358, guid: d40d25aa17764a9429caa943bb50a538,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.088823244
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091493669802272358, guid: d40d25aa17764a9429caa943bb50a538,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.011693798
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091493669802272358, guid: d40d25aa17764a9429caa943bb50a538,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.98745805
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091493669802272358, guid: d40d25aa17764a9429caa943bb50a538,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -10.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091493669802272358, guid: d40d25aa17764a9429caa943bb50a538,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.722
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091493669802272358, guid: d40d25aa17764a9429caa943bb50a538,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091493669802272358, guid: d40d25aa17764a9429caa943bb50a538,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.977
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091493669802272358, guid: d40d25aa17764a9429caa943bb50a538,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.642
+      objectReference: {fileID: 0}
+    - target: {fileID: 7372054627318864074, guid: d40d25aa17764a9429caa943bb50a538,
+        type: 3}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7372054627318864074, guid: d40d25aa17764a9429caa943bb50a538,
+        type: 3}
+      propertyPath: orthographic size
+      value: 2.19
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d40d25aa17764a9429caa943bb50a538, type: 3}
 --- !u!1001 &1474836629251911670
