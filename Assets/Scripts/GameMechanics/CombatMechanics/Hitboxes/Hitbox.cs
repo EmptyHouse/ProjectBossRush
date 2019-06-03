@@ -8,15 +8,10 @@ using UnityEngine.Events;
 public class Hitbox : MonoBehaviour
 {
     private CharacterStats associatedCharacterStats;
-    #region hitbox event variables
-    private UnityEvent OnHitboxEnteredEvent;
-    private UnityEvent OnHitboxExitEvent;
-    
-    private UnityEvent OnHurtboxEnteredEvent;
-    private UnityEvent OnHurtboxExitEvent;
 
-    private UnityEvent OnOtherColliderEnter;
-    private UnityEvent OnOtherColliderExit;
+
+    #region hitbox event variables
+    
     #endregion hitbox event variables
 
     #region monobehaviour methods
