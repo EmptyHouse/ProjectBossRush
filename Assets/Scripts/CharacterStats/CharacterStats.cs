@@ -18,6 +18,7 @@ public class CharacterStats : MonoBehaviour {
     public float maxHealth = 10;
     [Tooltip("The current health of this character")]
     private float currentHealth;
+    public HitboxManager hitboxManager;
     /// <summary>
     /// Associated animator with our character.
     /// </summary>
@@ -33,6 +34,7 @@ public class CharacterStats : MonoBehaviour {
         currentHealth = maxHealth;
         anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
+        hitboxManager = GetComponent<HitboxManager>();
     }
 
 

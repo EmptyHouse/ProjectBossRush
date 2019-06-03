@@ -10,10 +10,6 @@ public class Hitbox : MonoBehaviour
     private CharacterStats associatedCharacterStats;
 
 
-    #region hitbox event variables
-    
-    #endregion hitbox event variables
-
     #region monobehaviour methods
     private void Awake()
     {
@@ -36,6 +32,7 @@ public class Hitbox : MonoBehaviour
         {
 
         }
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -51,6 +48,7 @@ public class Hitbox : MonoBehaviour
         {
 
         }
+
     }
     #endregion monobehaviour methods
 }
