@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class Hurtbox : MonoBehaviour
 {
     private CharacterStats associatedCharacterStats;
-
+    
     #region monobehaviour methods
     private void Awake()
     {
@@ -20,12 +20,20 @@ public class Hurtbox : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        Hitbox hitbox = other.GetComponent<Hitbox>();
+        if (hitbox)
+        {
+
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        
+        Hitbox hitbox = other.GetComponent<Hitbox>();
+        if (hitbox)
+        {
+
+        }
     }
     #endregion monobehaviour methods
 
