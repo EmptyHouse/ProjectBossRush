@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: 571166628938604971}
   - component: {fileID: 571166628938604970}
   - component: {fileID: 50712941}
+  - component: {fileID: 710629878307400051}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -369,6 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  hitboxManager: {fileID: 0}
 --- !u!114 &571166628938604969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,5 +437,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74c4bd7c24a7ad049b9816da7d97756e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &710629878307400051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4993325171829953980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fcf720f17afdf442ada7dd95d02fa75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
