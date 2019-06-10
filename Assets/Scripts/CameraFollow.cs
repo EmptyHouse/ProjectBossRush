@@ -29,7 +29,7 @@ public class CameraFollow : MonoBehaviour
         cameraOffset = this.transform.position - mainTarget.position;
         this.transform.SetParent(null);
         associatedCamera = GetComponentInChildren<Camera>();
-        GameOverseer.Instance.mainGameCamera = associatedCamera;
+        //GameOverseer.Instance.mainGameCamera = associatedCamera;
         //GameOverseer.Instance.AddObjectToDontDestroyOnLoad(this.gameObject);
 
     }

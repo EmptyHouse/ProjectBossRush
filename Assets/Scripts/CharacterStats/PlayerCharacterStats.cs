@@ -13,6 +13,6 @@ public class PlayerCharacterStats : CharacterStats {
 
     protected void Start()
     {
-        GameOverseer.Instance.playerCharacterStats = this;
+        //GameOverseer.Instance.playerCharacterStats = this;
     }
 }

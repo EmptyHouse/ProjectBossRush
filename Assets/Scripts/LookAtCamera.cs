@@ -32,8 +32,8 @@ public class LookAtCamera : MonoBehaviour
 
     private void LateUpdate()
     {
-        Camera cam = GameOverseer.Instance.mainGameCamera;
-        spriteRenderer.transform.LookAt(cam.transform.position);
+        //Camera cam = GameOverseer.Instance.mainGameCamera;
+        //spriteRenderer.transform.LookAt(cam.transform.position);
     }
     #endregion monobehaviour methods
 }

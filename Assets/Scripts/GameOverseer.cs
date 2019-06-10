@@ -2,22 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class GameOverseer : MonoBehaviour
+{
 
-/// <summary>
-/// The Game Overseer is used to manage and store important references from the game. This is also where you can save/load the current
-/// game's progress
-/// </summary>
-public class GameOverseer : MonoBehaviour {
-    #region enums
     public enum GameState
     {
         GamePlaying,
         MenuOpen,
     }
 
-    #endregion enums
-
-    #region static variables
     private static GameOverseer instance;
 
     public static GameOverseer Instance
@@ -31,84 +24,25 @@ public class GameOverseer : MonoBehaviour {
             return instance;
         }
     }
-    #endregion static variables
-
-    #region main variables
-    public Utilities.SceneField sceneToLoadOnQuitGame;
-    public PlayerCharacterStats playerCharacterStats { get; set; }
-    public GameState currentGameState { get; private set; }
 
 
-    public List<GameObject> listOfObjectsInDontDestroyOnLoad { get; private set; }
-    /// <summary>
-    /// The main game camera in our scene
-    /// </summary>
-    public Camera mainGameCamera { get; set; }
-    #endregion main variables
-
-    #region monobehaviour methods
     private void Awake()
     {
-        
         instance = this;
-        
-
-        AddObjectToDontDestroyOnLoad(this.gameObject);
     }
-    #endregion monobehaviour methods
 
-
-    /// <summary>
-    /// Sets the current game state of our game. Certain actions may need to be taken for certain states
-    /// </summary>
-    public void SetCurrentGameState(GameState gameStateToSet)
+    public void SetCurrentGameState(GameState gameState)
     {
-        if (gameStateToSet == this.currentGameState)
-        {
-            Debug.LogWarning("You have set the state " + gameStateToSet.ToString() + " when it is already the current state");
-            return;
-        }
-        this.currentGameState = gameStateToSet;
+
     }
 
-    /// <summary>
-    /// In some cases we will want to persist the objects that are persistent throughout different levels
-    /// For example the in game UI and the game overseer should be persisted
-    /// </summary>
-    /// <param name="gameObjectToAddToDontDestroyOnLoad"></param>
-    public void AddObjectToDontDestroyOnLoad(GameObject gameObjectToAddToDontDestroyOnLoad)
+    public void AddObjectToDontDestroyOnLoad(GameObject gObject)
     {
-        if (listOfObjectsInDontDestroyOnLoad == null)
-        {
-            listOfObjectsInDontDestroyOnLoad = new List<GameObject>();
-        }
-        DontDestroyOnLoad(gameObjectToAddToDontDestroyOnLoad);
-        listOfObjectsInDontDestroyOnLoad.Add(gameObjectToAddToDontDestroyOnLoad);
+
     }
 
-    /// <summary>
-    /// When we return to the main menu we should just go ahead and destroy every game object including this overseer.
-    /// </summary>
-    public void DestroyAllGameObjectsInDontDestroyOnLoad()
-    {
-        if (listOfObjectsInDontDestroyOnLoad == null) return;
-
-        foreach (GameObject objectToDestroy in listOfObjectsInDontDestroyOnLoad)
-        {
-            Destroy(objectToDestroy);
-        }
-    }
-
-    /// <summary>
-    /// Safely quits the game and returns to the main menu
-    /// </summary>
     public void QuitGameAndReturnToMainMenu()
     {
-        DestroyAllGameObjectsInDontDestroyOnLoad();
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoadOnQuitGame);
+
     }
-
-    #region loading/saving game
-
-    #endregion loading/saving game
 }

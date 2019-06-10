@@ -75,7 +75,7 @@ public class CharacterDamageText : MonoBehaviour
         float timeRemainingBeforeBeginFadeout = damageTextLifetime - fadeOutTime;
         while (timeRemainingBeforeBeginFadeout > 0)
         {
-            timeRemainingBeforeBeginFadeout -= CustomTime.DeltaTime;
+            timeRemainingBeforeBeginFadeout -= Time.deltaTime;
             TranslateText(directionToMoveText);
             yield return null;
         } 
@@ -83,7 +83,7 @@ public class CharacterDamageText : MonoBehaviour
         float timeRemainingFadeOut = fadeOutTime;
         while (timeRemainingFadeOut > 0)
         {
-            timeRemainingFadeOut -= CustomTime.DeltaTime;
+            timeRemainingFadeOut -= Time.deltaTime;
             TranslateText(directionToMoveText);
             damageText.color = new Color(damageText.color.r, damageText.color.g, damageText.color.b, timeRemainingFadeOut / fadeOutTime);
             yield return null;
@@ -93,7 +93,7 @@ public class CharacterDamageText : MonoBehaviour
 
     public void TranslateText(Vector2 directionToMoveText)
     {
-        Vector2 offset = speedOfText * directionToMoveText * CustomTime.DeltaTime;
+        Vector2 offset = speedOfText * directionToMoveText * Time.deltaTime;
         transform.position = transform.position + new Vector3(offset.x, offset.y);
     }
 }
