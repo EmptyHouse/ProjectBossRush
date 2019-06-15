@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// An extension of the the CharacterStats class, but this will contain references that are only relevant to the player
-/// </summary>
-public class PlayerCharacterStats : CharacterStats {
-    /// <summary>
-    /// This is the primary camera that is following our player
-    /// </summary>
-    public CameraFollow playerCamera { get; set; }
 
-    protected void Start()
+/// <summary>
+/// Extension of the character stats script that handles special functionality for the player
+/// </summary>
+public class PlayerCharacterStats : CharacterStats
+{
+
+
+    #region monobehaviour methods
+    protected override void Awake()
     {
-        //GameOverseer.Instance.playerCharacterStats = this;
+        base.Awake();
+
     }
+    #endregion monobehaviour methods
 }

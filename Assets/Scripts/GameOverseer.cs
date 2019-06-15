@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class GameOverseer : MonoBehaviour
 {
-
-    public enum GameState
-    {
-        GamePlaying,
-        MenuOpen,
-    }
-
+    #region static varaibles
     private static GameOverseer instance;
-
     public static GameOverseer Instance
     {
         get
@@ -24,25 +17,12 @@ public class GameOverseer : MonoBehaviour
             return instance;
         }
     }
+    #endregion static variables
 
-
+    #region monobehaviour methods
     private void Awake()
     {
         instance = this;
     }
-
-    public void SetCurrentGameState(GameState gameState)
-    {
-
-    }
-
-    public void AddObjectToDontDestroyOnLoad(GameObject gObject)
-    {
-
-    }
-
-    public void QuitGameAndReturnToMainMenu()
-    {
-
-    }
+    #endregion monobehaviour methods
 }

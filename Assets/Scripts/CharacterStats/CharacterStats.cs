@@ -4,44 +4,39 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
+    public float maxHealth = 100;
 
-    #region main variables
-    public float maxHealth { get; private set; }
-    public float currentHealth { get; private set; }
+    private float currentHealth;
+    public Rigidbody2D rigid { get; private set; }
 
-    public Rigidbody2D rigid { get; set; }
-    public CharacterMovement characterMovement {get; set;}
-    
-    #endregion main variables
-    #region monobehaviour methods
-    private void Awake()
+    protected virtual void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
     }
 
-
-    #endregion monobehaviuor methods
-
-    #region health methods
+    #region health related methods
     public void AddHealthToCharacter(float healthToAdd)
     {
         currentHealth += healthToAdd;
         currentHealth = Mathf.Min(currentHealth, maxHealth);
     }
 
-    public void TakeDamage(float damageToTake)
+    public void DamageTakenToCharacter(float damageToTake)
     {
         currentHealth -= damageToTake;
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            OnCharacterIsDead();
+            OnCharacterDead();
         }
     }
 
-    private void OnCharacterIsDead()
+    /// <summary>
+    /// This method will be called whenever a character has reached a health of 0 or less
+    /// </summary>
+    public virtual void OnCharacterDead()
     {
         Destroy(this.gameObject);
     }
-    #endregion health methods
+    #endregion health related methods
 }
