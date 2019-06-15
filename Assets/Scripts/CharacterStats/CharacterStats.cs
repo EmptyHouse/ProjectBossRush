@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
+    public enum CharacterTeam
+    {
+        ENEMIES,
+        ALLIES,
+    }
+
+    public CharacterTeam characterTeam = CharacterTeam.ENEMIES;
     public float maxHealth = 100;
 
     private float currentHealth;
     public Rigidbody2D rigid { get; private set; }
+    public Animator anim { get; private set; }
 
     protected virtual void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     #region health related methods

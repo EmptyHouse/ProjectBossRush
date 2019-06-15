@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public float maxRunSpeed;
+    public float maxWalkSpeed;
+    public float acceleration;
     private CharacterStats associatedCharacterStats;
 
 
