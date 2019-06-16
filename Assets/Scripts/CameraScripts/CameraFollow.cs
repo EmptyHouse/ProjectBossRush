@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Transform targetTransformObject;
+    #region monbehaviour methods
+    private void Awake()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void LateUpdate()
     {
-        
+
     }
+    #endregion monobehaviour methods
 }
