@@ -9,8 +9,19 @@ public class PlayerController : MonoBehaviour
     public const string AXIS_VERTICAL = "Vertical";
     #endregion const variables
 
+    public PlayerCharacterStats characterStats { get; set; }
+
+    #region monobehaviour methods
+    private void Awake()
+    {
+    }
+
     private void Update()
     {
-        
+        float xInput = Input.GetAxisRaw(AXIS_HORIZONTAL);
+        float yInput = Input.GetAxisRaw(AXIS_VERTICAL);
+
+        characterStats.characterMovement.SetDirectionalInput(xInput, yInput);
     }
+    #endregion monobehaivour methods
 }

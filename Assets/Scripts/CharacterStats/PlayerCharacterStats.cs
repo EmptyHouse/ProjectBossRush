@@ -9,12 +9,16 @@ using UnityEngine;
 public class PlayerCharacterStats : CharacterStats
 {
 
-
+    public PlayerController playerController { get; private set; }
     #region monobehaviour methods
     protected override void Awake()
     {
         base.Awake();
+        playerController = GetComponent<PlayerController>();
+        playerController.characterStats = this;
 
     }
+
+
     #endregion monobehaviour methods
 }

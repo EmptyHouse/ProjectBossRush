@@ -11,17 +11,27 @@ public class CharacterStats : MonoBehaviour
     }
 
     public CharacterTeam characterTeam = CharacterTeam.ENEMIES;
+
     public float maxHealth = 100;
 
     private float currentHealth;
     public Rigidbody2D rigid { get; private set; }
     public Animator anim { get; private set; }
+    public CharacterMovement characterMovement { get; private set; }
 
+
+    #region monobehaviour methods
     protected virtual void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+
+        characterMovement = GetComponent<CharacterMovement>();
+        characterMovement.associatedCharacterStats = this;
+
     }
+    #endregion monobehaviour methods
 
     #region health related methods
     public void AddHealthToCharacter(float healthToAdd)
