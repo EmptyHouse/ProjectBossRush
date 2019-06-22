@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEditor.Tilemaps;
 namespace UnityEditor
 {
     [CreateAssetMenu(fileName = "Prefab brush", menuName = "Brushes/Prefab brush")]

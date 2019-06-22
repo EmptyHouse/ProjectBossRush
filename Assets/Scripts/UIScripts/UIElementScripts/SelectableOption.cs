@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class SelectableOption : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public SelectableOption northOption;
+    public SelectableOption southOption;
+    public SelectableOption eastOption;
+    public SelectableOption westOption;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
