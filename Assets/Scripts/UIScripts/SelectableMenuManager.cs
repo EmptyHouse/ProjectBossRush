@@ -11,6 +11,8 @@ public class SelectableMenuManager : MonoBehaviour
     public const float JOYSTICK_THRESHOLD = .6f;
     public const string HORIZONTAL_AXIS = "Horizontal";
     public const string VERTICAL_AXIS = "Vertical";
+    public const string SELECT_INPUT = "Submit";
+    public const string CANCEL_INPUT = "Cancel";
 
     public const float DELAY_BEFORE_BEGIN_AUTO_SCROLL = .12f;
     public const float DELAY_BETWEEN_NEXT_OPTION_AUTO_SCROLL = .03f;
