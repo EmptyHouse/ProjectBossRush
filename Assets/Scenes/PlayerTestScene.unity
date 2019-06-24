@@ -1955,5 +1955,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4028774500581810420, guid: e872f6bb1f490ab4490e3bbd914f20b3,
+        type: 3}
+      propertyPath: maxRunSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028774500581810420, guid: e872f6bb1f490ab4490e3bbd914f20b3,
+        type: 3}
+      propertyPath: maxWalkSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 134811041, guid: e872f6bb1f490ab4490e3bbd914f20b3, type: 3}
+      propertyPath: orthographic size
+      value: 1.66
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e872f6bb1f490ab4490e3bbd914f20b3, type: 3}
