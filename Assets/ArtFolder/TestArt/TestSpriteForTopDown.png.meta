@@ -4,49 +4,49 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -2383738643190542512
-    second: WalkRight_00
+    second: WalkEast_00
   - first:
       213: 187530016494819135
-    second: WalkRight_01
+    second: WalkEast_01
   - first:
       213: 1399586706830380123
-    second: WalkRight_02
+    second: WalkEast_02
   - first:
       213: 6722424966722726384
-    second: WalkRight_03
+    second: WalkEast_03
   - first:
       213: 3656523797663214339
-    second: WalkRight_04
+    second: WalkEast_04
   - first:
       213: 4320830527080617797
-    second: WalkRight_05
+    second: WalkEast_05
   - first:
       213: -3298631394392563862
-    second: WalkRight_06
+    second: WalkEast_06
   - first:
       213: -1030784043668351236
-    second: WalkRight_07
+    second: WalkEast_07
   - first:
       213: -3851373177866644257
-    second: WalkRight_08
+    second: WalkEast_08
   - first:
       213: 487725128610849745
-    second: WalkRight_09
+    second: WalkEast_09
   - first:
       213: -1398598209750592532
-    second: WalkRight_10
+    second: WalkEast_10
   - first:
       213: -4154460254050246965
-    second: WalkRight_11
+    second: WalkEast_11
   - first:
       213: 1450692925863266568
-    second: WalkRight_12
+    second: WalkEast_12
   - first:
       213: -5068129483678748847
-    second: WalkRight_13
+    second: WalkEast_13
   - first:
       213: -5091800958961954637
-    second: WalkRight_14
+    second: WalkEast_14
   - first:
       213: -9199754787587992470
     second: TestSpriteForTopDown_15
@@ -100,49 +100,49 @@ TextureImporter:
     second: TestSpriteForTopDown_31
   - first:
       213: 8532155854215291215
-    second: TestSpriteForTopDown_32
+    second: WalkNorth_00
   - first:
       213: 3591624719613553386
-    second: TestSpriteForTopDown_33
+    second: WalkNorth_01
   - first:
       213: 5552396421191723086
-    second: TestSpriteForTopDown_34
+    second: WalkNorth_02
   - first:
       213: 2665518858235673053
-    second: TestSpriteForTopDown_35
+    second: WalkNorth_03
   - first:
       213: -3214588680313672180
-    second: TestSpriteForTopDown_36
+    second: WalkNorth_04
   - first:
       213: 6795901450831491881
-    second: TestSpriteForTopDown_37
+    second: WalkNorth_05
   - first:
       213: -5182882445054669536
-    second: TestSpriteForTopDown_38
+    second: WalkNorth_06
   - first:
       213: -3884627804335598710
-    second: TestSpriteForTopDown_39
+    second: WalkNorth_07
   - first:
       213: -6785620473271766811
-    second: TestSpriteForTopDown_40
+    second: WalkNorth_08
   - first:
       213: -3379588220003269144
-    second: TestSpriteForTopDown_41
+    second: WalkNorth_09
   - first:
       213: -121667559222544201
-    second: TestSpriteForTopDown_42
+    second: WalkNorth_10
   - first:
       213: -1976746664607492690
-    second: TestSpriteForTopDown_43
+    second: WalkNorth_11
   - first:
       213: -5324360480568513488
-    second: TestSpriteForTopDown_44
+    second: WalkNorth_12
   - first:
       213: 8761797185898688661
-    second: TestSpriteForTopDown_45
+    second: WalkNorth_13
   - first:
       213: -2904603655294154913
-    second: TestSpriteForTopDown_46
+    second: WalkNorth_14
   - first:
       213: 6556979330838473218
     second: TestSpriteForTopDown_47
@@ -196,43 +196,43 @@ TextureImporter:
     second: TestSpriteForTopDown_63
   - first:
       213: 4142674586632481167
-    second: TestSpriteForTopDown_64
+    second: WalkWest_00
   - first:
       213: -7035278320487414970
-    second: TestSpriteForTopDown_65
+    second: WalkWest_01
   - first:
       213: -7695869702581406744
-    second: TestSpriteForTopDown_66
+    second: WalkWest_02
   - first:
       213: -1118930154001230576
-    second: TestSpriteForTopDown_67
+    second: WalkWest_03
   - first:
       213: 391733118967306543
-    second: TestSpriteForTopDown_68
+    second: WalkWest_04
   - first:
       213: -839089225481960668
-    second: TestSpriteForTopDown_69
+    second: WalkWest_05
   - first:
       213: -6602897563243696527
-    second: TestSpriteForTopDown_70
+    second: WalkWest_06
   - first:
       213: 8897883480463697139
-    second: TestSpriteForTopDown_71
+    second: WalkWest_07
   - first:
       213: -4395882597308217226
-    second: TestSpriteForTopDown_72
+    second: WalkWest_09
   - first:
       213: 4670252422890711113
-    second: TestSpriteForTopDown_73
+    second: WalkWest_10
   - first:
       213: -6718105826480882782
-    second: TestSpriteForTopDown_74
+    second: WalkWest_11
   - first:
       213: -1371172518380967600
-    second: TestSpriteForTopDown_75
+    second: WalkWest_13
   - first:
       213: -8455076400509910652
-    second: TestSpriteForTopDown_76
+    second: WalkWest_14
   - first:
       213: 8925142261704292065
     second: TestSpriteForTopDown_77
@@ -283,55 +283,55 @@ TextureImporter:
     second: TestSpriteForTopDown_92
   - first:
       213: 4494098807853597296
-    second: TestSpriteForTopDown_93
+    second: WalkWest_08
   - first:
       213: 4864449991413412725
-    second: TestSpriteForTopDown_94
+    second: WalkWest_12
   - first:
       213: -7226247447610665218
-    second: TestSpriteForTopDown_95
+    second: WalkSouth_00
   - first:
       213: 5312862804354591220
-    second: TestSpriteForTopDown_96
+    second: WalkSouth_01
   - first:
       213: -7051396644407933232
-    second: TestSpriteForTopDown_97
+    second: WalkSouth_02
   - first:
       213: 5170996860459406855
-    second: TestSpriteForTopDown_98
+    second: WalkSouth_03
   - first:
       213: -8831527122942742040
-    second: TestSpriteForTopDown_99
+    second: WalkSouth_04
   - first:
       213: 883511969366718835
-    second: TestSpriteForTopDown_100
+    second: WalkSouth_05
   - first:
       213: -1410382229670161812
-    second: TestSpriteForTopDown_101
+    second: WalkSouth_06
   - first:
       213: 3936042728306803280
-    second: TestSpriteForTopDown_102
+    second: WalkSouth_07
   - first:
       213: -7405857446162512852
-    second: TestSpriteForTopDown_103
+    second: WalkSouth_08
   - first:
       213: 1013885935883875943
-    second: TestSpriteForTopDown_104
+    second: WalkSouth_09
   - first:
       213: -5298923233101053898
-    second: TestSpriteForTopDown_105
+    second: WalkSouth_10
   - first:
       213: -8918974206063236057
-    second: TestSpriteForTopDown_106
+    second: WalkSouth_11
   - first:
       213: -5414770366959987249
-    second: TestSpriteForTopDown_107
+    second: WalkSouth_12
   - first:
       213: 1644430074574577278
-    second: TestSpriteForTopDown_108
+    second: WalkSouth_13
   - first:
       213: 3329992145039207542
-    second: TestSpriteForTopDown_109
+    second: WalkSouth_14
   - first:
       213: 1479145707096670917
     second: TestSpriteForTopDown_110
@@ -1017,7 +1017,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WalkRight_00
+      name: WalkEast_00
       rect:
         serializedVersion: 2
         x: 12
@@ -1038,7 +1038,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkRight_01
+      name: WalkEast_01
       rect:
         serializedVersion: 2
         x: 44
@@ -1059,7 +1059,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkRight_02
+      name: WalkEast_02
       rect:
         serializedVersion: 2
         x: 76
@@ -1080,7 +1080,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkRight_03
+      name: WalkEast_03
       rect:
         serializedVersion: 2
         x: 108
@@ -1101,7 +1101,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkRight_04
+      name: WalkEast_04
       rect:
         serializedVersion: 2
         x: 140
@@ -1122,7 +1122,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkRight_05
+      name: WalkEast_05
       rect:
         serializedVersion: 2
         x: 172
@@ -1143,7 +1143,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkRight_06
+      name: WalkEast_06
       rect:
         serializedVersion: 2
         x: 202
@@ -1164,7 +1164,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkRight_07
+      name: WalkEast_07
       rect:
         serializedVersion: 2
         x: 234
@@ -1185,7 +1185,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkRight_08
+      name: WalkEast_08
       rect:
         serializedVersion: 2
         x: 266
@@ -1206,7 +1206,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkRight_09
+      name: WalkEast_09
       rect:
         serializedVersion: 2
         x: 298
@@ -1227,7 +1227,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkRight_10
+      name: WalkEast_10
       rect:
         serializedVersion: 2
         x: 329
@@ -1248,7 +1248,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkRight_11
+      name: WalkEast_11
       rect:
         serializedVersion: 2
         x: 362
@@ -1269,7 +1269,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkRight_12
+      name: WalkEast_12
       rect:
         serializedVersion: 2
         x: 392
@@ -1290,7 +1290,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkRight_13
+      name: WalkEast_13
       rect:
         serializedVersion: 2
         x: 427
@@ -1311,7 +1311,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkRight_14
+      name: WalkEast_14
       rect:
         serializedVersion: 2
         x: 459
@@ -1689,7 +1689,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_32
+      name: WalkNorth_00
       rect:
         serializedVersion: 2
         x: 11
@@ -1710,7 +1710,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_33
+      name: WalkNorth_01
       rect:
         serializedVersion: 2
         x: 43
@@ -1731,7 +1731,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_34
+      name: WalkNorth_02
       rect:
         serializedVersion: 2
         x: 75
@@ -1752,7 +1752,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_35
+      name: WalkNorth_03
       rect:
         serializedVersion: 2
         x: 107
@@ -1773,7 +1773,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_36
+      name: WalkNorth_04
       rect:
         serializedVersion: 2
         x: 139
@@ -1794,7 +1794,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_37
+      name: WalkNorth_05
       rect:
         serializedVersion: 2
         x: 171
@@ -1815,7 +1815,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_38
+      name: WalkNorth_06
       rect:
         serializedVersion: 2
         x: 202
@@ -1836,7 +1836,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_39
+      name: WalkNorth_07
       rect:
         serializedVersion: 2
         x: 235
@@ -1857,7 +1857,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_40
+      name: WalkNorth_08
       rect:
         serializedVersion: 2
         x: 267
@@ -1878,7 +1878,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_41
+      name: WalkNorth_09
       rect:
         serializedVersion: 2
         x: 299
@@ -1899,7 +1899,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_42
+      name: WalkNorth_10
       rect:
         serializedVersion: 2
         x: 331
@@ -1920,7 +1920,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_43
+      name: WalkNorth_11
       rect:
         serializedVersion: 2
         x: 363
@@ -1941,7 +1941,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_44
+      name: WalkNorth_12
       rect:
         serializedVersion: 2
         x: 395
@@ -1962,7 +1962,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_45
+      name: WalkNorth_13
       rect:
         serializedVersion: 2
         x: 427
@@ -1983,7 +1983,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_46
+      name: WalkNorth_14
       rect:
         serializedVersion: 2
         x: 459
@@ -2361,7 +2361,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_64
+      name: WalkWest_00
       rect:
         serializedVersion: 2
         x: 11
@@ -2382,7 +2382,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_65
+      name: WalkWest_01
       rect:
         serializedVersion: 2
         x: 43
@@ -2403,7 +2403,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_66
+      name: WalkWest_02
       rect:
         serializedVersion: 2
         x: 75
@@ -2424,7 +2424,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_67
+      name: WalkWest_03
       rect:
         serializedVersion: 2
         x: 107
@@ -2445,7 +2445,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_68
+      name: WalkWest_04
       rect:
         serializedVersion: 2
         x: 139
@@ -2466,7 +2466,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_69
+      name: WalkWest_05
       rect:
         serializedVersion: 2
         x: 171
@@ -2487,7 +2487,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_70
+      name: WalkWest_06
       rect:
         serializedVersion: 2
         x: 202
@@ -2508,7 +2508,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_71
+      name: WalkWest_07
       rect:
         serializedVersion: 2
         x: 234
@@ -2529,7 +2529,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_72
+      name: WalkWest_09
       rect:
         serializedVersion: 2
         x: 300
@@ -2550,7 +2550,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_73
+      name: WalkWest_10
       rect:
         serializedVersion: 2
         x: 330
@@ -2571,7 +2571,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_74
+      name: WalkWest_11
       rect:
         serializedVersion: 2
         x: 363
@@ -2592,7 +2592,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_75
+      name: WalkWest_13
       rect:
         serializedVersion: 2
         x: 428
@@ -2613,7 +2613,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_76
+      name: WalkWest_14
       rect:
         serializedVersion: 2
         x: 459
@@ -2970,7 +2970,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_93
+      name: WalkWest_08
       rect:
         serializedVersion: 2
         x: 266
@@ -2991,7 +2991,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_94
+      name: WalkWest_12
       rect:
         serializedVersion: 2
         x: 392
@@ -3012,7 +3012,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_95
+      name: WalkSouth_00
       rect:
         serializedVersion: 2
         x: 11
@@ -3033,7 +3033,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_96
+      name: WalkSouth_01
       rect:
         serializedVersion: 2
         x: 43
@@ -3054,7 +3054,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_97
+      name: WalkSouth_02
       rect:
         serializedVersion: 2
         x: 75
@@ -3075,7 +3075,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_98
+      name: WalkSouth_03
       rect:
         serializedVersion: 2
         x: 107
@@ -3096,7 +3096,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_99
+      name: WalkSouth_04
       rect:
         serializedVersion: 2
         x: 139
@@ -3117,7 +3117,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_100
+      name: WalkSouth_05
       rect:
         serializedVersion: 2
         x: 171
@@ -3138,7 +3138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_101
+      name: WalkSouth_06
       rect:
         serializedVersion: 2
         x: 202
@@ -3159,7 +3159,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_102
+      name: WalkSouth_07
       rect:
         serializedVersion: 2
         x: 235
@@ -3180,7 +3180,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_103
+      name: WalkSouth_08
       rect:
         serializedVersion: 2
         x: 267
@@ -3201,7 +3201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_104
+      name: WalkSouth_09
       rect:
         serializedVersion: 2
         x: 299
@@ -3222,7 +3222,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_105
+      name: WalkSouth_10
       rect:
         serializedVersion: 2
         x: 331
@@ -3243,7 +3243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_106
+      name: WalkSouth_11
       rect:
         serializedVersion: 2
         x: 362
@@ -3264,7 +3264,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_107
+      name: WalkSouth_12
       rect:
         serializedVersion: 2
         x: 395
@@ -3285,7 +3285,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_108
+      name: WalkSouth_13
       rect:
         serializedVersion: 2
         x: 427
@@ -3306,7 +3306,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TestSpriteForTopDown_109
+      name: WalkSouth_14
       rect:
         serializedVersion: 2
         x: 459

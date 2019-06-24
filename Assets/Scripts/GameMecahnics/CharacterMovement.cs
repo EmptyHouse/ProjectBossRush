@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(CharacterStats))]
 public class CharacterMovement : MonoBehaviour
 {
 
@@ -22,6 +24,9 @@ public class CharacterMovement : MonoBehaviour
     #region const variables
     public const float JOYSTICK_WALK_THRESHOLD = .15f;
     public const float JOYSTICK_RUN_THRESHOLD = .65f;
+
+    public const string ANIM_VERTICAL = "vInput";
+    public const string ANIM_HORIZONTAL = "hInput";
 
     #endregion const variables
     private Rigidbody2D rigid
@@ -79,5 +84,8 @@ public class CharacterMovement : MonoBehaviour
     {
         this.xInput = xInput;
         this.yInput = yInput;
+
+        associatedCharacterStats.anim.SetFloat(ANIM_HORIZONTAL, this.xInput);
+        associatedCharacterStats.anim.SetFloat(ANIM_VERTICAL, this.yInput);
     }
 }
