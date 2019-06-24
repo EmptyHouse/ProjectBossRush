@@ -5,6 +5,20 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
 
+    #region enum
+    public enum Direction : byte
+    {
+        SW = 0x01,
+        S = 0x02,
+        SE = 0x03,
+        W = 0x04,
+        E = 0x06,
+        NW = 0x07,
+        N = 0x08,
+        NE = 0x09,
+    }
+    #endregion enum
+
     #region const variables
     public const float JOYSTICK_WALK_THRESHOLD = .15f;
     public const float JOYSTICK_RUN_THRESHOLD = .65f;
@@ -35,7 +49,14 @@ public class CharacterMovement : MonoBehaviour
     {
         UpdateMovementBasedOnDirectionalInput();
     }
+
+
     #endregion monobehaviour methods
+
+    private void SetDirectionBasedOnInput()
+    {
+
+    }
 
     private void UpdateMovementBasedOnDirectionalInput()
     {
