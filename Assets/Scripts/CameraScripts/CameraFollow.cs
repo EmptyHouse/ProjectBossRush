@@ -6,6 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
     #region main variables
     public AnimationCurve zoomingAnimationCurve;
+    [Range(0, 1)]
     [Tooltip("The lerp speed of our camera from the target transform")]
     public float cameraFollowSpeed = 10;
     /// <summary>
@@ -43,9 +44,11 @@ public class CameraFollow : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
-        LerpToTargetTransform();
+        Vector3 desiredPosition = targetTransformObject.position + defaultOffset;
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, cameraFollowSpeed);
+        transform.position = smoothedPosition;
     }
     #endregion monobehaviour methods
 
