@@ -25,6 +25,9 @@ public class Overseer : MonoBehaviour
     {
         get; set;
     }
+
+    [SerializeField]
+    public Transform ProjectileParentTransform;
     #endregion main variables
 
     #region monobeahviour methods
@@ -33,5 +36,20 @@ public class Overseer : MonoBehaviour
         instance = this;
     }
     #endregion monobehavoiur methods
+
+    #region Prefab References
+
+    [SerializeField]
+    private GameObject ProjectileObject;
+
+    public GameObject Projectile
+    {
+        get
+        {
+            return ProjectileObject;
+        }
+    }
+
+    #endregion
 
 }

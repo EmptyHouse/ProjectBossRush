@@ -10,14 +10,14 @@ public class CharacterMovement : MonoBehaviour
     #region enum
     public enum Direction : byte
     {
-        SW = 0x01,
-        S = 0x02,
-        SE = 0x03,
+        E = 0x00,
+        NE = 0x01,
+        N = 0x02,
+        NW = 0x03,
         W = 0x04,
-        E = 0x06,
-        NW = 0x07,
-        N = 0x08,
-        NE = 0x09,
+        SW = 0x05,
+        S = 0x06,
+        SE = 0x07,
     }
     #endregion enum
 
@@ -53,6 +53,11 @@ public class CharacterMovement : MonoBehaviour
     private void Update()
     {
         UpdateMovementBasedOnDirectionalInput();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Projectile projectile = Instantiate(Overseer.Instance.Projectile, Overseer.Instance.ProjectileParentTransform, true).GetComponent<Projectile>();
+            projectile.SetupProjectile(associatedCharacterStats, Direction.NE);
+        }
     }
 
 
