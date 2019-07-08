@@ -94,10 +94,10 @@ public class HitboxManager : MonoBehaviour
     /// <returns></returns>
     private bool CheckHitboxIntersect(Hitbox h1, Hitbox h2)
     {
-        Vector2 tl1 = h1.hitboxColliderBounds.topLeft;
-        Vector2 br1 = h1.hitboxColliderBounds.bottomRight;
-        Vector2 tl2 = h2.hitboxColliderBounds.topLeft;
-        Vector2 br2 = h2.hitboxColliderBounds.bottomRight;
+        Vector2 tl1 = h1.bounds.topLeft;
+        Vector2 br1 = h1.bounds.bottomRight;
+        Vector2 tl2 = h2.bounds.topLeft;
+        Vector2 br2 = h2.bounds.bottomRight;
 
         if (tl1.x > br2.x || tl2.x > br1.x)
         {
