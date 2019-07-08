@@ -15,8 +15,6 @@ public class Projectile : MonoBehaviour
 
     #region main variables
 
-    private const float Offset = 10f;
-
     /// <summary>
     /// A reference to the character that fired this projectile
     /// </summary>
@@ -25,9 +23,13 @@ public class Projectile : MonoBehaviour
     /// <summary>
     /// Associated rigid body with our projectile
     /// </summary>
-    private Rigidbody2D rigid;
+    public Rigidbody2D rigid { get; private set; }
 
-    private Animator Animator { get; set; }
+    public Animator Animator { get; private set; }
+
+    public SpriteRenderer SpriteRenderer;
+
+    public InteractionHandler InteractionHandler { get; set; }
 
     /// <summary>
     /// Direction of the projectile. Usually shouldn't change once projectile is instantiated.
@@ -35,8 +37,9 @@ public class Projectile : MonoBehaviour
     /// </summary>
     private Vector2 Direction;
 
-    #endregion
+    public float ProjectileLifetime;
 
+    #endregion
 
     #region monobehaviour methods
     protected virtual void Awake()
@@ -48,6 +51,11 @@ public class Projectile : MonoBehaviour
     protected virtual void Update()
     {
         
+    }
+
+    protected virtual void OnDestroy()
+    {
+        Debug.LogWarning("Projectile destroyed");
     }
     #endregion monobehaviour methods
 
@@ -63,10 +71,27 @@ public class Projectile : MonoBehaviour
 
         float degrees = Mathf.Deg2Rad * component;
         Vector2 directionVector = new Vector2(Mathf.Cos(degrees), Mathf.Sin(degrees)) * PROJECTILE_SPEED;
+        directionVector += AssociatedCharacterStats.characterMovement.rigid.velocity;
 
         rigid.velocity = directionVector;
         Direction = directionVector;
-        
+
+        StartCoroutine(DestroyProjectileAfterLifetime());
+    }
+
+    #endregion
+
+    #region private methods
+
+    private IEnumerator DestroyProjectileAfterLifetime()
+    {
+        float lifetime = ProjectileLifetime;
+        while (lifetime > 0.0f)
+        {
+            yield return new WaitForEndOfFrame();
+            lifetime -= Time.deltaTime;
+        }
+        GameObject.Destroy(this.gameObject);
     }
 
     #endregion

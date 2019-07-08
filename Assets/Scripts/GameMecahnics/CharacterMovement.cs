@@ -29,7 +29,9 @@ public class CharacterMovement : MonoBehaviour
     public const string ANIM_HORIZONTAL = "hInput";
 
     #endregion const variables
-    private Rigidbody2D rigid
+
+    #region main variables
+    public Rigidbody2D rigid
     {
         get
         {
@@ -39,12 +41,16 @@ public class CharacterMovement : MonoBehaviour
     public float maxRunSpeed = 10;
     public float maxWalkSpeed = 5;
     public float acceleration = 25;
-    public CharacterStats associatedCharacterStats { get; set; }
 
+    public CharacterStats associatedCharacterStats { get; set; }
+    public Direction CharacterDirection { get; private set; }
 
     private float xInput;
     private float yInput;
-    #region monobehavoiur methods
+
+    #endregion
+
+    #region monobehaviour methods
     private void Awake()
     {
         associatedCharacterStats = GetComponent<CharacterStats>();
@@ -53,15 +59,27 @@ public class CharacterMovement : MonoBehaviour
     private void Update()
     {
         UpdateMovementBasedOnDirectionalInput();
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Projectile projectile = Instantiate(Overseer.Instance.Projectile, Overseer.Instance.ProjectileParentTransform, true).GetComponent<Projectile>();
-            projectile.SetupProjectile(associatedCharacterStats, Direction.NE);
-        }
     }
 
 
     #endregion monobehaviour methods
+
+    #region public methods
+
+    public void SetDirectionalInput(float xInput, float yInput)
+    {
+        this.xInput = xInput;
+        this.yInput = yInput;
+
+        associatedCharacterStats.anim.SetFloat(ANIM_HORIZONTAL, this.xInput);
+        associatedCharacterStats.anim.SetFloat(ANIM_VERTICAL, this.yInput);
+
+        SetPlayerDirection();
+    }
+
+    #endregion
+
+    #region private methods
 
     private void SetDirectionBasedOnInput()
     {
@@ -85,12 +103,52 @@ public class CharacterMovement : MonoBehaviour
         rigid.velocity = goalVelocity;
     }
 
-    public void SetDirectionalInput(float xInput, float yInput)
+    private void SetPlayerDirection()
     {
-        this.xInput = xInput;
-        this.yInput = yInput;
-
-        associatedCharacterStats.anim.SetFloat(ANIM_HORIZONTAL, this.xInput);
-        associatedCharacterStats.anim.SetFloat(ANIM_VERTICAL, this.yInput);
+        // Left
+        if (xInput < 0.0f)
+        {
+            if (yInput > 0.0f)
+            {
+                CharacterDirection = Direction.NW;
+            }
+            else if (yInput < 0.0f)
+            {
+                CharacterDirection = Direction.SW;
+            }
+            else
+            {
+                CharacterDirection = Direction.W;
+            }
+        }
+        // Right
+        else if (xInput > 0.0f)
+        {
+            if (yInput > 0.0f)
+            {
+                CharacterDirection = Direction.NE;
+            }
+            else if (yInput < 0.0f)
+            {
+                CharacterDirection = Direction.SE;
+            }
+            else
+            {
+                CharacterDirection = Direction.E;
+            }
+        }
+        else
+        {
+            if (yInput < 0.0f)
+            {
+                CharacterDirection = Direction.S;
+            }
+            else
+            {
+                CharacterDirection = Direction.N;
+            }
+        }
     }
+
+    #endregion
 }

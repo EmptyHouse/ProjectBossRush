@@ -18,6 +18,7 @@ public class CharacterStats : MonoBehaviour
     public Rigidbody2D rigid { get; private set; }
     public Animator anim { get; private set; }
     public CharacterMovement characterMovement { get; private set; }
+    public CombatHandler CombatHandler { get; private set; }
 
 
     #region monobehaviour methods
@@ -29,6 +30,9 @@ public class CharacterStats : MonoBehaviour
 
         characterMovement = GetComponent<CharacterMovement>();
         characterMovement.associatedCharacterStats = this;
+
+        CombatHandler = GetComponent<CombatHandler>();
+        CombatHandler.AssociatedCharacterStats = this;
 
     }
     #endregion monobehaviour methods

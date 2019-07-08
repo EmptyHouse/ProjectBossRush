@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 6798075743377678823}
   - component: {fileID: 8985569170451765161}
   - component: {fileID: 6798075743377678820}
+  - component: {fileID: 8234923920738694058}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -125,6 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4af5805d522d0e4d851c7700975ea0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1571355659896676390}
+  ProjectileLifetime: 3
 --- !u!50 &8985569170451765161
 Rigidbody2D:
   serializedVersion: 4
@@ -165,3 +168,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8234923920738694058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6798075743377678821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc677a41ccb72ca4498960d559f61868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterMoves: []
+  MoveHitPlayer: 0
+  Hitstun: 0
