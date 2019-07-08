@@ -26,6 +26,11 @@ public class Overseer : MonoBehaviour
         get; set;
     }
 
+    public ColliderManager colliderManager
+    {
+        get; set;
+    }
+
     [SerializeField]
     public Transform ProjectileParentTransform;
     #endregion main variables

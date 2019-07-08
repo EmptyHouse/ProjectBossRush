@@ -7,7 +7,7 @@ using UnityEngine;
 /// Our custom collider hitbox class. Hitboxes do not interact with any other type of collider except for other hitboxes and hurtboxes
 /// Do not use this to interact with the environment or activate the triggers
 /// </summary>
-public class Hitbox : MonoBehaviour
+public class Hitbox : CustomBoxCollider2D
 {
     #region const variables
     private static Color GIZMO_COLOR = new Color(204f / 255f, 0, 0);
@@ -22,10 +22,7 @@ public class Hitbox : MonoBehaviour
 
     public HitboxType hitboxType = HitboxType.Hurtbox;
 
-    public Vector2 boxColliderSize = Vector2.one;
-    public Vector2 boxColliderPosition;
-
-    public HitboxBounds hitboxColliderBounds;
+    
 
     public InteractionHandler associatedInteractionHandler;
 
@@ -78,7 +75,7 @@ public class Hitbox : MonoBehaviour
         UpdateBoxColliderPoints();
     }
 
-    private void OnDrawGizmos()
+    protected override void OnDrawGizmos()
     {
         if (!Application.isPlaying)
         {
@@ -98,7 +95,7 @@ public class Hitbox : MonoBehaviour
         Color colorWithTransparency = colorToDraw;
         colorWithTransparency.a = .2f;
         #if UNITY_EDITOR
-        UnityEditor.Handles.DrawSolidRectangleWithOutline(hitboxColliderBounds.GetVertices(), colorWithTransparency, colorToDraw);
+        UnityEditor.Handles.DrawSolidRectangleWithOutline(bounds.GetVertices(), colorWithTransparency, colorToDraw);
         #endif
     }
     #endregion monobehaviour methods
@@ -135,37 +132,7 @@ public class Hitbox : MonoBehaviour
         return false;
     }
 
-    /// <summary>
-    /// This should be called by our HitboxManager
-    /// </summary>
-    public void UpdateBoxColliderPoints()
-    {
-        hitboxColliderBounds = new HitboxBounds();
-        Vector2 origin = this.transform.position + new Vector3(boxColliderPosition.x, boxColliderPosition.y);
+    
 
-        hitboxColliderBounds.topLeft = origin + Vector2.up * boxColliderSize.y / 2 - Vector2.right * boxColliderSize.x / 2;
-        hitboxColliderBounds.topRight = origin + Vector2.up * boxColliderSize.y / 2 + Vector2.right * boxColliderSize.x / 2;
-        hitboxColliderBounds.bottomLeft = origin - Vector2.up * boxColliderSize.y / 2 - Vector2.right * boxColliderSize.x / 2;
-        hitboxColliderBounds.bottomRight = origin - Vector2.up * boxColliderSize.y / 2 + Vector2.right * boxColliderSize.x / 2;
-
-    }
-
-    public struct HitboxBounds
-    {
-        public Vector2 topLeft;
-        public Vector2 topRight;
-        public Vector2 bottomLeft;
-        public Vector2 bottomRight;
-
-        public Vector3[] GetVertices()
-        {
-            return new Vector3[]
-            {
-                topLeft,
-                topRight,
-                bottomRight,
-                bottomLeft,
-            };
-        }
-    }
+    
 }
