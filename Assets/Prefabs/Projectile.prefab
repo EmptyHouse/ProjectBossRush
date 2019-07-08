@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpriteRenderer: {fileID: 1571355659896676390}
-  ProjectileLifetime: 3
+  ProjectileLifetime: 2
 --- !u!50 &8985569170451765161
 Rigidbody2D:
   serializedVersion: 4
@@ -182,4 +182,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterMoves: []
   MoveHitPlayer: 0
-  Hitstun: 0

@@ -46,6 +46,10 @@ public class Projectile : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
+
+        InteractionHandler = GetComponent<InteractionHandler>();
+        InteractionHandler.ClashAction = OnClash;
+        InteractionHandler.HitEnemyAction = OnHitEnemy;
     }
 
     protected virtual void Update()
@@ -91,7 +95,17 @@ public class Projectile : MonoBehaviour
             yield return new WaitForEndOfFrame();
             lifetime -= Time.deltaTime;
         }
-        GameObject.Destroy(this.gameObject);
+            GameObject.Destroy(this.gameObject);
+    }
+
+    private void OnHitEnemy(Hitbox hitbox,Hitbox hurtbox)
+    {
+        Destroy(this.gameObject);
+    }
+
+    private void OnClash(Hitbox eneymHitBox)
+    {
+        Destroy(this.gameObject);
     }
 
     #endregion

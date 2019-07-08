@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// This is the base class that handles any interaction with the enemy player or environment (hitboxes, projectiles, environmental traps, etc)
@@ -48,9 +49,17 @@ public class InteractionHandler : MonoBehaviour
     // Has the last move we activated already hit a player
     public bool MoveHitPlayer;
 
-    public int Hitstun;
+    #endregion
 
     #endregion
+
+    #region Unity Actions
+
+    public UnityAction<Hitbox,Hitbox> HitByEnemyAction { private get; set; }
+
+    public UnityAction<Hitbox,Hitbox> HitEnemyAction { private get; set; }
+
+    public UnityAction<Hitbox> ClashAction { private get; set; }
 
     #endregion
 
@@ -70,6 +79,13 @@ public class InteractionHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+
+    private void OnDestroy()
+    {
+        HitEnemyAction = null;
+        ClashAction = null;
+        HitByEnemyAction = null;
     }
 
     private void Awake()
@@ -93,46 +109,34 @@ public class InteractionHandler : MonoBehaviour
 
     public void OnHitByEnemy(Hitbox myHurtbox, Hitbox enemyHitbox, MoveData currentMove)
     {
-
-        //TODO Get current active move from animation and command interpreter.
-        //CharacterStats.OnPlayerHitByEnemy(myHurtbox, enemyHitbox, currentMove);
-
-        if (currentMove.OnHitFrames > 0)
+        if (HitByEnemyAction != null)
         {
-            Hitstun += currentMove.OnHitFrames;
-            Animator.SetBool(HITSTUN_TRIGGER, true);
-            Animator.SetTrigger(currentMove.Magnitude.ToString());
-            StartCoroutine(HandleHitstun());
+            HitByEnemyAction(myHurtbox, enemyHitbox);
         }
     }
 
     public void OnHitEnemy(Hitbox myHitbox, Hitbox enemyHurtbox)
     {
-        //TODO Get current active move from animation and command interpreter. Pass null for now.
-        //CharacterStats.OnPlayerHitEnemy(myHitbox, enemyHurtbox, CurrentMove);
         MoveHitPlayer = true;
+
+        if (HitEnemyAction != null)
+        {
+            HitEnemyAction(myHitbox, enemyHurtbox);
+        }
+
     }
 
     public void OnClash(Hitbox enemyHitbox)
     {
-
+        if (ClashAction != null)
+        {
+            ClashAction(enemyHitbox);
+        }
     }
 
     #endregion
 
     #region private methods
-
-    private IEnumerator HandleHitstun()
-    {
-
-        while (Hitstun > 0)
-        {
-            --Hitstun;
-            yield return new WaitForEndOfFrame();
-        }
-
-        Animator.SetBool(HITSTUN_TRIGGER, false);
-    }
     
     #endregion
 
