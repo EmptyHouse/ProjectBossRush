@@ -22,10 +22,21 @@ public abstract class CustomCollider2D : MonoBehaviour
     /// </summary>
     protected ColliderBounds previouBounds { get; set; }
 
+    protected virtual void Awake()
+    {
+        UpdateBoundsOfCollider();
+        Overseer.Instance.colliderManager.AddColliderToManager(this);
+    }
+
+    protected virtual void OnDestroy()
+    {
+        
+    }
+
     /// <summary>
     /// Be sure to call this methodd
     /// </summary>
-    protected virtual void UpdateBoundsOfCollider()
+    public virtual void UpdateBoundsOfCollider()
     {
         previouBounds = bounds;
     }

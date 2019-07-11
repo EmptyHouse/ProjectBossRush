@@ -18,7 +18,10 @@ public class ColliderManager : MonoBehaviour
 
     private void Update()
     {
-        
+        foreach (CustomCollider2D collider in colliderList)
+        {
+            collider.UpdateBoundsOfCollider();
+        }
     }
     #endregion monobehaviour methods
 

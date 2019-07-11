@@ -72,14 +72,14 @@ public class Hitbox : CustomBoxCollider2D
 
     private void OnValidate()
     {
-        UpdateBoxColliderPoints();
+        UpdateBoundsOfCollider();
     }
 
     protected override void OnDrawGizmos()
     {
         if (!Application.isPlaying)
         {
-            UpdateBoxColliderPoints();
+            UpdateBoundsOfCollider();
         }
         Color colorToDraw = Color.white;
         switch (hitboxType)

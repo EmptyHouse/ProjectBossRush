@@ -59,7 +59,7 @@ public class HitboxManager : MonoBehaviour
         Hitbox h2 = null;
         foreach (Hitbox hBox in allActiveHitboxes)
         {
-            hBox.UpdateBoxColliderPoints();
+            hBox.UpdateBoundsOfCollider();
         }
         for (int i = 0; i < allActiveHitboxes.Count - 1; i++)
         {
